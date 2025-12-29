@@ -682,8 +682,6 @@ gerenciadorDeTarefas-ProjetoIndividual/
 │   └── tarefa.js               # Model da tarefa
 |   └── usuario.js              # Model do usuário
 |
-├── node_modules/               # Pacotes do node (tem muitas pastas dentro dele)
-|
 ├── routes/                 # Definição das rotas do sistema (rotas de usuário e tarefa)
 │   └── index.js
 |
@@ -699,9 +697,6 @@ gerenciadorDeTarefas-ProjetoIndividual/
 │   └── login.js
 │   └── logout.js
 │   └── runSQLScript.js
-|
-├── services/                   # Serviços auxiliares do sistema
-│   └── userService.js             
 |               
 ├── styles/                     # Arquivos CSS públicos
 │   └── criarTarefa.css
@@ -712,9 +707,6 @@ gerenciadorDeTarefas-ProjetoIndividual/
 │   └── listarTarefas.css
 │   └── loginAndSignUp.css
 │   └── style.css.css
-|
-├── tests/                      # Arquivos de testes unitários
-│   └── example.test.js
 |
 ├── views/                      # Templates e componentes visuais da aplicação
 |   └── Cadastro/
@@ -735,9 +727,7 @@ gerenciadorDeTarefas-ProjetoIndividual/
 |
 ├── .gitignore                  # Arquivo para ignorar arquivos no Git
 |
-├── .env                        # Arquivo para variáveis de ambiente (banco de dados)
-|
-├── jest.config.js              # Arquivo de configuração do Jest
+├── .env.example                # Arquivo de exemplo para variáveis de ambiente (banco de dados)
 |
 ├── package-lock.json           # Gerenciador de dependências do Node.js
 |
@@ -746,8 +736,6 @@ gerenciadorDeTarefas-ProjetoIndividual/
 ├── README.md                   # Descrição do projeto e de como instalá-lo
 |
 ├── server.js                   # Arquivo principal que inicializa o servidor
-|
-└── rest.http                   # Teste de endpoints (opcional)
 ```
 
 
@@ -828,11 +816,18 @@ npm install bcrypt
 ```
 npm install date-fns
 ```
+<br>
+
+&nbsp; &nbsp; &nbsp; &nbsp;Dependências do nodemon, para reiniciar automaticamente a aplicação Node.js sempre que arquivos do projeto são alterados:
+
+```
+npm install nodemon
+```
 
 <br><br>
 
 ## Parte 2: configuração do banco de dados
-1) Faça a configuração das variáveis de ambiente necessárias, a exemplo das configurações do banco de dados PostgreSQL. No caso deste projeto, usou-se o Supabase para armazenar os dados. Dessa forma, para rodar seu projeto com as suas credenciais do Supabase, insira isso no arquivo .env: 
+1) Faça a configuração das variáveis de ambiente necessárias, a exemplo das configurações do banco de dados PostgreSQL. No caso deste projeto, usou-se o Supabase para armazenar os dados. Dessa forma, para rodar seu projeto com as suas credenciais do Supabase, renomeie o arquivo .env.example para .env e, logo após essa ação, insira isso no arquivo .env: 
 
 ```
 DB_USER=
@@ -871,12 +866,12 @@ npm run init-db
 
 3) Depois de seguir esses passos, execute o seguinte comando no terminal:
 ```
-node server.js
+npm run dev
 ```
 
 ## Observações
 &nbsp; &nbsp; &nbsp; &nbsp; Sempre que você precisar iniciar o servidor, rode o seguinte comando no terminal:
 
 ```
-node server.js
+npm run dev
 ```
